@@ -2,6 +2,8 @@
 
 import pygame
 from settings import *
+from map import draw_map
+from player import Player
 
 # Initialize pygame
 pygame.init()
@@ -13,6 +15,9 @@ pygame.display.set_caption("The Great Heist")
 # Clock (controls FPS)
 clock = pygame.time.Clock()
 
+# Create player
+player = Player()
+
 running = True
 while running:
     clock.tick(FPS)
@@ -22,8 +27,15 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    # Draw
+    # --- INPUT ---
+    keys = pygame.key.get_pressed()
+    player.move(keys)
+
+    # --- DRAW ---
     screen.fill(BLACK)
+
+    draw_map(screen)
+    player.draw(screen)
 
     # Update display
     pygame.display.flip()

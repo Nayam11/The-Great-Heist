@@ -1,8 +1,11 @@
 # player.py
 
+import os
+import math
 import pygame
 from settings import *
 from map import grid   # IMPORTANT
+from bullets import Bullet
 
 class Player:
     def __init__(self):
@@ -10,20 +13,33 @@ class Player:
         self.y = 100
         self.size = 30
         self.speed = 5
+        self.angle = 0
+        self.health = 100
 
-    def move(self, keys):
+        # Load and scale player image
+        image_path = os.path.join('assets', 'PNG', 'Hitman 1', 'hitman1_gun.png')
+        self.original_image = pygame.image.load(image_path).convert_alpha()
+        self.original_image = pygame.transform.scale(self.original_image, (self.size, self.size))
+
+    def move(self, keys, camera_x, camera_y):
         new_x = self.x
         new_y = self.y
 
-        # Calculate new position first
-        if keys[pygame.K_RIGHT]:
+        # Calculate new position
+        if keys[pygame.K_d]:
             new_x += self.speed
-        if keys[pygame.K_LEFT]:
+        if keys[pygame.K_a]:
             new_x -= self.speed
-        if keys[pygame.K_UP]:
+        if keys[pygame.K_w]:
             new_y -= self.speed
-        if keys[pygame.K_DOWN]:
+        if keys[pygame.K_s]:
             new_y += self.speed
+            
+        # Mouse aiming
+        mx, my = pygame.mouse.get_pos()
+        dx = (mx + camera_x) - (self.x + self.size // 2)
+        dy = (my + camera_y) - (self.y + self.size // 2)
+        self.angle = -math.degrees(math.atan2(dy, dx))
 
         # Check all 4 corners
         left = new_x
@@ -51,5 +67,16 @@ class Player:
             self.x = new_x
             self.y = new_y
 
-    def draw(self, screen):
-        pygame.draw.rect(screen, (255, 0, 0), (self.x, self.y, self.size, self.size))
+    def shoot(self, target_x, target_y):
+        return Bullet(self.x + self.size // 2, self.y + self.size // 2, target_x, target_y, 'player', 25)
+
+    def take_damage(self, amount):
+        self.health -= amount
+
+    def draw(self, screen, camera_x, camera_y):
+        # Rotate image based on the current angle
+        rotated_image = pygame.transform.rotate(self.original_image, self.angle)
+        # Center the rotated image properly on the player's position
+        rect = rotated_image.get_rect(center=(self.x - camera_x + self.size // 2, self.y - camera_y + self.size // 2))
+        
+        screen.blit(rotated_image, rect.topleft)

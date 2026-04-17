@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.test.heist">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_heist_logo"
+        android:label="The Great Heist"
+        android:roundIcon="@drawable/ic_heist_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TheGreatHeist">
+        
+        <activity
+            android:name=".LandingActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".LevelSelectActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".GameActivity"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".FieldManualActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".SupportActivity"
+            android:screenOrientation="portrait" />
+            
+    </application>
+
+</manifest>

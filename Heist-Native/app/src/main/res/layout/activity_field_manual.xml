@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#0a0e1a"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="28dp">
+
+        <!-- Back arrow row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/backArrowTop"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_back"
+                android:tint="#FFD700" />
+
+        </LinearLayout>
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="&#9672;  GAME GUIDE  &#9672;"
+            android:textColor="#FFD700"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:letterSpacing="0.2"
+            android:paddingTop="4dp"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CLASSIFIED — OPERATIVE EYES ONLY"
+            android:textColor="#555555"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:letterSpacing="0.3"
+            android:paddingBottom="24dp" />
+
+        <!-- Divider -->
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#FFD700" android:alpha="0.4" android:layout_marginBottom="24dp"/>
+
+        <!-- Section: Objective -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="▶  MISSION OBJECTIVE"
+            android:textColor="#FFD700" android:textSize="18sp" android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Your directive is simple: infiltrate the secured compound, neutralize all hostile guards, collect every gold asset, then reach the EXIT door to extract safely.\n\nAll three objectives must be complete before the exit unlocks. There are no shortcuts."
+            android:textColor="#CCCCCC" android:textSize="15sp" android:lineSpacingMultiplier="1.5"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Section: Controls -->
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#333344" android:layout_marginBottom="20dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="▶  CONTROLS"
+            android:textColor="#FFD700" android:textSize="18sp" android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Left Stick -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="12dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="◉  LEFT THUMB (Move)" android:textColor="#FFD700" android:textSize="14sp" android:textStyle="bold"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="Drag to move your operative in any 360° direction. Operative faces direction of movement automatically."
+                android:textColor="#AAAAAA" android:textSize="13sp"/>
+        </LinearLayout>
+
+        <!-- Right Stick -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="12dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="◉  RIGHT THUMB (Aim + Fire)" android:textColor="#FF5252" android:textSize="14sp" android:textStyle="bold"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="Drag to aim independently. Releases automatic fire while held. Overrides movement facing direction."
+                android:textColor="#AAAAAA" android:textSize="13sp"/>
+        </LinearLayout>
+
+        <!-- Section: Items -->
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#333344" android:layout_marginBottom="20dp" android:layout_marginTop="4dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="▶  ITEMS &amp; PICKUPS"
+            android:textColor="#FFD700" android:textSize="18sp" android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Gold -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="14dp">
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content"
+                android:text="●" android:textColor="#FFD700" android:textSize="22sp" android:gravity="center"/>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="GOLD COIN" android:textColor="#FFD700" android:textSize="14sp" android:textStyle="bold"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Walk over to collect. Required to unlock exit. Also grants +2 ammo." android:textColor="#AAAAAA" android:textSize="12sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Health Potion -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="14dp">
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content"
+                android:text="✚" android:textColor="#FF4444" android:textSize="22sp" android:gravity="center"/>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="HEALTH POTION  (Red Cross)" android:textColor="#FF4444" android:textSize="14sp" android:textStyle="bold"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Restores +20 HP on pickup. Cannot exceed 100%. Use strategically — supplies are limited." android:textColor="#AAAAAA" android:textSize="12sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Speed Potion -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="14dp">
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content"
+                android:text="⚡" android:textColor="#40C4FF" android:textSize="22sp" android:gravity="center"/>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="SPEED BOOST  (Blue Lightning)" android:textColor="#40C4FF" android:textSize="14sp" android:textStyle="bold"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Temporarily increases movement speed for ~5 seconds. Great for flanking or escaping." android:textColor="#AAAAAA" android:textSize="12sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Exit Door -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="14dp">
+            <TextView android:layout_width="40dp" android:layout_height="wrap_content"
+                android:text="▬" android:textColor="#00FFFF" android:textSize="22sp" android:gravity="center"/>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="EXIT DOOR  (Cyan Doorway)" android:textColor="#00FFFF" android:textSize="14sp" android:textStyle="bold"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Always placed in the bottom-right area. Unlocks ONLY when all gold is collected and all guards neutralized. Use the HUD compass arrow to navigate." android:textColor="#AAAAAA" android:textSize="12sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Section: Enemy AI -->
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#333344" android:layout_marginBottom="20dp" android:layout_marginTop="4dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="▶  HOSTILE GUARD AI"
+            android:textColor="#FFD700" android:textSize="18sp" android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="• PATROL — Guards roam their assigned sector randomly.\n\n• ATTACK — Spotting you (within ~550px, line-of-sight) triggers an immediate assault. Guards aim and fire automatically.\n\n• LINE OF SIGHT — Guards CANNOT shoot through walls. Use cover and room geometry tactically.\n\n• INVESTIGATE — Killing a guard alerts the nearest surviving guard. They will move to the fallen position, increasing the heat.\n\n• LEVEL SCALING — Guard count, speed, and fire rate all increase with each level."
+            android:textColor="#CCCCCC" android:textSize="14sp" android:lineSpacingMultiplier="1.4"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Section: HUD -->
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#333344" android:layout_marginBottom="20dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="▶  HUD — TACTICAL DISPLAY"
+            android:textColor="#FFD700" android:textSize="18sp" android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="HEALTH — Green/red bar showing operative vitality (0–100%)\nGOLD — Total assets secured this mission\nFOES — Remaining hostile guards\nLOOT — Remaining gold pieces on the map\nAMMO — Remaining rounds. Each kill rewards +5 rounds.\nEXIT COMPASS — Gold arrow in top-right always points toward the exit door with distance in meters."
+            android:textColor="#CCCCCC" android:textSize="14sp" android:lineSpacingMultiplier="1.5"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Section: Tips -->
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#333344" android:layout_marginBottom="20dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="▶  OPERATIVE TIPS"
+            android:textColor="#FFD700" android:textSize="18sp" android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="①  Use the RIGHT stick to aim while holding still — strafe-fire around corners.\n\n②  Corner-peek: move just into a doorway, aim, and retreat after firing.\n\n③  Killing guards earns ammo — never waste shots on impossible angles.\n\n④  Monitor the FOES counter tightly. The exit activates the moment it hits zero AND loot hits zero.\n\n⑤  Health potions only give +20 — plan ahead, don't run low before a fight.\n\n⑥  Speed boost is a flanking tool — pop it and circle behind a guard cluster."
+            android:textColor="#CCCCCC" android:textSize="14sp" android:lineSpacingMultiplier="1.5"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Back Button -->
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#FFD700" android:alpha="0.3" android:layout_marginBottom="20dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/backBtn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#FFD700"
+            android:text="◄  RETURN TO BASE"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+        
+    </LinearLayout>
+
+</ScrollView>
